@@ -1,0 +1,32 @@
+mongo 
+
+db.retail_price.aggregate([{$match:{}},{$group:{'_id':'$product_category_name',Total_price:{$sum:'$total_price'}}}])
+
+
+db.online_store_customer_data.aggregate([{$group:{'_id':'$employees_status',Amount_spent:{$sum:'$amount_spent'}}}])
+
+db.online_store_customer_data.aggregate([{$group:{'_id':'$Marital_status',Count:{$sum:'$Referal'}}}])
+
+
+================================
+
+sql
+
+
+
+select employees_status,sum(amount_spent) as amount_spent from online_store_customer_data GROUP BY employees_status;
+
+select employees_status,sum(amount_spent) as amount_spent from online_store_customer_data GROUP BY employees_status;
+
+select prdt_category_name,avg(rating) from retail_price where year='2017' GROUP BY prdt_category_name;
+
+select prdt_category_name,sum(total_price) from retail_price GROUP BY prdt_category_name;
+
+select prdt_category_name,avg(rating) from retail_price where year='2017' GROUP BY prdt_category_name;
+
+select prdt_category_name,avg(rating) from retail_price where year='2018' GROUP BY prdt_category_name;
+
+select month,sum(quantity) as purchases from retail_price GROUP BY month;
+
+select prdt_category_name,sum(quantity) as purchases from retail_price GROUP BY prdt_category_name;
+
